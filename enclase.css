@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	height: 90%;
+}
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.2rem;
+	min-height: 100%; 
+}
+
+.grid_container{
+	display: grid;
+	gap: 10px;
+	grid-template-areas: 
+	"header"
+	"navbar" 
+	"main"	
+	"footer" 
+	;
+}
+
+.header{
+	grid-area: header;
+	background-color:#F8F5F5;
+	display: grid;
+	grid-template-rows: 140px;
+	grid-template-columns: auto;
+
+}
+
+.logo{}
+
+
+
+.navbar{
+	grid-area: navbar;
+	color: #8D8989;
+	background-color: #ffffff;
+	transition: all 0.3, easy;
+	text-align: center;
+	font-size: 26px;
+	grid-template-rows: 200px;
+	grid-template-columns: auto;
+	grid-template-areas: 
+	"participa"
+
+}
+
+.navbar:hover{ color: #636e72;}
+
+
+
+.main{
+	padding: 30px;
+	grid-area: main;
+	background-color:#F8F5F5;
+	display: grid;
+	grid-template-columns: 200px auto 400px;
+	grid-template-rows: 450px;
+	grid-template-areas: 
+	"cuadro" "formulario" "fork";
+
+
+	
+}
+
+.footer{
+	grid-area: footer;
+	background-color: #ffffff;
+	display: grid;
+	grid-template-columns: 2fr 0.7fr 2.3fr;
+	grid-template-rows: 35px;
+	grid-template-areas: 
+	"i" "ft" "fa";
+
+}
+
+
+.i{	margin:5px;	
+	margin-left: 490px;}
+
+.ft{margin:5px;	
+	margin-left: 50px;	
+	color: #8D8989;	}
+	
+.fa{margin:5px;	
+	margin-left: 50px;		}
+
+
+.comp{font-size: 24px;
+	text-align: center;}
+
+#formulario {
+	width: 45%;
+	margin-left: 260px;
+	color: #8D8989;
+	position: relative;
+	float: left;
+	border-radius: 4px;
+	background: #FFFFFF;
+	padding: 20px;
+}
+
+.boxform {
+       padding: 3%;
+       width: 100%;
+       font-size: 15px;
+       background-color: #F8F5F5;
+       position: relative;            
+}
+
+.textarea{padding: 3%;
+       width: 100%;
+       font-size: 18px;
+       background-color: #F8F5F5;
+       position: relative;  }
+
+.submitform {
+       padding: 1%;
+       width: 30%;
+       font-size: 18px;
+       margin-left: 35%;
+       margin-right: auto;
+       margin-top: 0.5%;
+       position: relative;
+
+   }
+
+.submitform:hover{
+	border-radius: 20%;
+	background-color: #8D8989;
+	color: #ffffff;
+}
+
+.cuadro:hover{transform: rotate(-5deg);}
+.fork:hover{transform: rotate(5deg);}
+
+
+
+@media (min-width: 600px) {
+
+
+	.grid_container{
+
+ 		grid-template-columns: 50% 50%;
+		grid-template-rows: 100px 50px auto	50px 50px;
+
+		grid-template-areas: 
+		"header header"
+		"navbar navbar"
+		"main main"
+		"main main"
+		"footer footer";
+
+		
+ 	}
+
+ 	.main{	
+ 		
+		grid-template-areas: 
+		"cuadro 	fork"
+		"formulario formulario";	}
+
+
+
+
+
+
+}
+
+@media (min-width: 900px) {
+	.grid_container{
+		grid-template: 
+		"header 	header 	header" 	100px 
+		"navbar 	main 	sidebar" 	auto
+		"footer 	footer 	footer" 	100px /
+		 200px 		auto 	200px;
+	}
+}
+
